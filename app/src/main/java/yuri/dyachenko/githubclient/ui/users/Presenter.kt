@@ -11,7 +11,7 @@ class Presenter(
     private val router: Router
 ) : MvpPresenter<View>() {
 
-    val usersListPresenter = ListPresenter()
+    val usersListPresenter = UserListPresenter()
 
     override fun onFirstViewAttach() {
         usersListPresenter.itemClickListener = {

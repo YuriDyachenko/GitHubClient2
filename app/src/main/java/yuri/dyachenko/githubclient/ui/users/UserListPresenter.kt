@@ -1,10 +1,10 @@
 package yuri.dyachenko.githubclient.ui.users
 
 import yuri.dyachenko.githubclient.model.User
-import yuri.dyachenko.githubclient.model.UserItemView
-import yuri.dyachenko.githubclient.model.UserListPresenter
+import yuri.dyachenko.githubclient.ui.list.ListPresenter
 
-class ListPresenter : UserListPresenter {
+class UserListPresenter : ListPresenter<UserItemView> {
+
     val users = mutableListOf<User>()
 
     override var itemClickListener: ((UserItemView) -> Unit)? = null

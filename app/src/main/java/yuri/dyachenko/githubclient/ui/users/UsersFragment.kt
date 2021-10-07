@@ -8,8 +8,8 @@ import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import yuri.dyachenko.githubclient.App
 import yuri.dyachenko.githubclient.databinding.FragmentUsersBinding
-import yuri.dyachenko.githubclient.model.User
 import yuri.dyachenko.githubclient.impl.UsersListRepoImpl
+import yuri.dyachenko.githubclient.model.User
 
 class UsersFragment : MvpAppCompatFragment(), View {
 

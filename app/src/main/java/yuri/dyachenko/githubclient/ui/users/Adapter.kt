@@ -4,20 +4,19 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import yuri.dyachenko.githubclient.databinding.UserItemLayoutBinding
-import yuri.dyachenko.githubclient.model.UserItemView
-import yuri.dyachenko.githubclient.model.UserListPresenter
+import yuri.dyachenko.githubclient.ui.list.ListPresenter
 
-class Adapter(private val presenter: UserListPresenter) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(
+    private val presenter: ListPresenter<UserItemView>
+) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(
-            UserItemLayoutBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+            UserItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         ).apply {
-            itemView.setOnClickListener { presenter.itemClickListener?.invoke(this) }
+            itemView.setOnClickListener {
+                presenter.itemClickListener?.invoke(this)
+            }
         }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -34,4 +33,5 @@ class Adapter(private val presenter: UserListPresenter) : RecyclerView.Adapter<A
         }
 
         override var pos = -1
-    }}
+    }
+}

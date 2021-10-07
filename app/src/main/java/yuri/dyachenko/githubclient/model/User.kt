@@ -1,3 +1,5 @@
 package yuri.dyachenko.githubclient.model
 
-data class User(val login: String)
+data class User(
+    val login: String
+)
